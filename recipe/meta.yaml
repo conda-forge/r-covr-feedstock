@@ -1,4 +1,4 @@
-{% set version = '3.0.0' %}
+{% set version = "3.0.1" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,7 +12,7 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/covr_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/covr/covr_{{ version }}.tar.gz
-  sha256: 0ab23592eba87260ab1e7b47463fbd484535ba175600314cfa0d8dc96f459c63
+  sha256: 66b799fd03cb83a9ab382d9cf4ff40603d1e3f3a89905a3174546b0c63e8d184
 
 build:
   number: 0
