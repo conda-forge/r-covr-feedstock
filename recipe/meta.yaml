@@ -66,6 +66,8 @@ about:
 
 extra:
   recipe-maintainers:
-    - jdblischak
     - johanneskoester
     - bgruening
+    - daler
+    - jdblischak
+    - cbrueffer
