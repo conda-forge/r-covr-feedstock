@@ -62,7 +62,8 @@ about:
     with any testing methodology or framework and tracks coverage of both R code and
     compiled C/C++/FORTRAN code.
   license_family: GPL3
-  license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE'
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'  # [unix]
+  license_file: '{{ environ["PREFIX"] }}\R\share\licenses\GPL-3'      # [win]
 
 extra:
   recipe-maintainers:
