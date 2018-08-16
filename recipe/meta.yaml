@@ -1,4 +1,4 @@
-{% set version = "3.0.1" %}
+{% set version = '3.1.0' %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,11 +12,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/covr_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/covr/covr_{{ version }}.tar.gz
-  sha256: 66b799fd03cb83a9ab382d9cf4ff40603d1e3f3a89905a3174546b0c63e8d184
+  sha256: c701e036bd0b2c4b113814eea5753c65951a3e6417740ce6cb6401cbed858756
 
 build:
   merge_build_host: True  # [win]
-  number: 1
+  number: 0
 
   rpaths:
     - lib/R/lib/
@@ -72,3 +72,4 @@ extra:
     - daler
     - jdblischak
     - cbrueffer
+    - dbast
