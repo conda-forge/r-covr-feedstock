@@ -1,7 +1,7 @@
 About r-covr
 ============
 
-Home: https://github.com/jimhester/covr
+Home: https://github.com/r-lib/covr
 
 Package license: GPL-3
 

@@ -10,14 +10,13 @@ package:
 source:
   fn: covr_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/covr_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/covr/covr_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/covr_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/covr/covr_{{ version }}.tar.gz
   sha256: 66b799fd03cb83a9ab382d9cf4ff40603d1e3f3a89905a3174546b0c63e8d184
 
 build:
   merge_build_host: True  # [win]
   number: 1
-  skip: true  # [win32]
 
   rpaths:
     - lib/R/lib/
@@ -28,9 +27,12 @@ requirements:
     - posix                # [win]
     - {{ compiler('c') }}        # [unix]
     - {{ compiler('m2w64_c') }}  # [win]
+    - {{posix}}zip               # [win]
+
   host:
     - r-base
     - r-crayon
+    - r-digest
     - r-httr
     - r-jsonlite
     - r-rex
@@ -39,6 +41,7 @@ requirements:
   run:
     - r-base
     - r-crayon
+    - r-digest
     - r-httr
     - r-jsonlite
     - r-rex
@@ -46,11 +49,11 @@ requirements:
 
 test:
   commands:
-    - $R -e "library('covr')"  # [not win]
+    - $R -e "library('covr')"           # [not win]
     - "\"%R%\" -e \"library('covr')\""  # [win]
 
 about:
-  home: https://github.com/jimhester/covr
+  home: https://github.com/r-lib/covr
   license: GPL-3
   summary: Track and report code coverage for your package and (optionally) upload the results
     to a coverage service like 'Codecov' <http://codecov.io> or 'Coveralls' <http://coveralls.io>.
