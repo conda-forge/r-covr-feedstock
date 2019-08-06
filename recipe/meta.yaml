@@ -36,6 +36,7 @@ requirements:
     - r-jsonlite
     - r-rex
     - r-withr >=1.0.2
+    - r-yaml
   run:
     - r-base
     - {{native}}gcc-libs         # [win]
@@ -45,6 +46,7 @@ requirements:
     - r-jsonlite
     - r-rex
     - r-withr >=1.0.2
+    - r-yaml
 
 test:
   commands:
@@ -66,12 +68,6 @@ about:
 extra:
   recipe-maintainers:
     - conda-forge/r
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
-    - cbrueffer
-    - dbast
 
 # Encoding: UTF-8
 # Package: covr
