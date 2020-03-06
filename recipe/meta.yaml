@@ -1,4 +1,4 @@
-{% set version = "3.4.0" %}
+{% set version = "3.5.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,10 +10,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/covr_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/covr/covr_{{ version }}.tar.gz
-  sha256: e57d9c656b4ab50a7f9557dee422d8777efaf08ecde0fd8bfa5897ef4d9e845c
+  sha256: cb919912018130164a40803ac573a37dde2186678c058c03c6303d79604979df
 
 build:
-  merge_build_host: True  # [win]
+  merge_build_host: true  # [win]
   number: 0
   rpaths:
     - lib/R/lib/
@@ -58,14 +58,11 @@ test:
 about:
   home: https://github.com/r-lib/covr
   license: GPL-3
-  summary: Track and report code coverage for your package and (optionally) upload the results
-    to a coverage service like 'Codecov' <http://codecov.io> or 'Coveralls' <http://coveralls.io>.
-    Code coverage is a measure of the amount of code being exercised by a set of tests.
-    It is an indirect measure of test quality and completeness. This package is compatible
-    with any testing methodology or framework and tracks coverage of both R code and
-    compiled C/C++/FORTRAN code.
+  summary: Track and report code coverage for your package and (optionally) upload the results to a coverage service like 'Codecov' <http://codecov.io> or 'Coveralls'
+    <http://coveralls.io>. Code coverage is a measure of the amount of code being exercised by a set of tests. It is an indirect measure of test quality and completeness.
+    This package is compatible with any testing methodology or framework and tracks coverage of both R code and compiled C/C++/FORTRAN code.
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
+  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
