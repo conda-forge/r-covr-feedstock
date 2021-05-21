@@ -21,6 +21,14 @@ build:
 
 requirements:
   build:
+    - cross-r-base {{ r_base }}  # [build_platform != target_platform]
+    - r-rex                      # [build_platform != target_platform]
+    - r-digest                   # [build_platform != target_platform]
+    - r-jsonlite                 # [build_platform != target_platform]
+    - r-withr                    # [build_platform != target_platform]
+    - r-crayon                   # [build_platform != target_platform]
+    - r-httr                     # [build_platform != target_platform]
+    - r-yaml                     # [build_platform != target_platform]
     - {{ compiler('c') }}              # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
     - {{ compiler('cxx') }}            # [not win]
