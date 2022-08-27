@@ -1,4 +1,4 @@
-{% set version = "3.6.0" %}
+{% set version = "3.6.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/covr_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/covr/covr_{{ version }}.tar.gz
-  sha256: c04b151630d24491e286c2a25c54fd1970db41a5bf3bea08f0a06d602fa369f2
+  sha256: ffbe15438c1a4f274c14cacfb944480e284f1ab60808d5e840c015cc57c51157
 
 build:
   merge_build_host: true  # [win]
