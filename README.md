@@ -3,6 +3,7 @@ About r-covr-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-covr-feedstock/blob/main/LICENSE.txt)
 
+
 About r-covr
 ------------
 
@@ -11,6 +12,7 @@ Home: https://github.com/r-lib/covr
 Package license: GPL-3.0-only
 
 Summary: Track and report code coverage for your package and (optionally) upload the results to a coverage service like 'Codecov' <http://codecov.io> or 'Coveralls' <http://coveralls.io>. Code coverage is a measure of the amount of code being exercised by a set of tests. It is an indirect measure of test quality and completeness. This package is compatible with any testing methodology or framework and tracks coverage of both R code and compiled C/C++/FORTRAN code.
+
 About r-covr
 ------------
 
