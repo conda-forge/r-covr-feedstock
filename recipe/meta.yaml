@@ -1,4 +1,4 @@
-{% set version = "3.6.4" %}
+{% set version = "3.6.5" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/covr_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/covr/covr_{{ version }}.tar.gz
-  sha256: 2b6204036510c629d0b1d58daaee34d4e38baf54164f8d4c9afd6d6b1fb1862a
+  sha256: 20d3a98c1d751c68115e0dacd9ac46d83a112bbadf1f46da7c9672afee7e8986
 
 build:
-  number: 2
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
