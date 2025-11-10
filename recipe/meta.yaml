@@ -1,4 +1,4 @@
-{% set version = "3.6.4" %}
+{% set version = "3.6.5" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,23 +9,27 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/covr_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/covr/covr_{{ version }}.tar.gz
-  sha256: 2b6204036510c629d0b1d58daaee34d4e38baf54164f8d4c9afd6d6b1fb1862a
+  sha256: 20d3a98c1d751c68115e0dacd9ac46d83a112bbadf1f46da7c9672afee7e8986
 
 build:
-  number: 2
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
     - cross-r-base {{ r_base }}  # [build_platform != target_platform]
-    - r-rex                      # [build_platform != target_platform]
+    - r-cli                      # [build_platform != target_platform]
     - r-digest                   # [build_platform != target_platform]
-    - r-jsonlite                 # [build_platform != target_platform]
-    - r-withr                    # [build_platform != target_platform]
-    - r-crayon                   # [build_platform != target_platform]
     - r-httr                     # [build_platform != target_platform]
+    - r-jsonlite                 # [build_platform != target_platform]
+    - r-rex                      # [build_platform != target_platform]
+    - r-withr                    # [build_platform != target_platform]
     - r-yaml                     # [build_platform != target_platform]
     - {{ compiler('c') }}              # [not win]
     - {{ stdlib("c") }}                # [not win]
@@ -40,7 +44,7 @@ requirements:
     - {{ posix }}zip               # [win]
   host:
     - r-base
-    - r-crayon
+    - r-cli
     - r-digest
     - r-httr
     - r-jsonlite
@@ -49,7 +53,7 @@ requirements:
     - r-yaml
   run:
     - r-base
-    - r-crayon
+    - r-cli
     - r-digest
     - r-httr
     - r-jsonlite
@@ -64,12 +68,13 @@ test:
 
 about:
   home: https://github.com/r-lib/covr
-  license: GPL-3.0-only
+  license: MIT
   summary: Track and report code coverage for your package and (optionally) upload the results to a coverage service like 'Codecov' <http://codecov.io> or 'Coveralls' <http://coveralls.io>. Code coverage is a measure of the amount of code being exercised by a set of tests. It is an indirect measure of test quality and completeness.
     This package is compatible with any testing methodology or framework and tracks coverage of both R code and compiled C/C++/FORTRAN code.
-  license_family: GPL3
+  license_family: MIT
   license_file:
-    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/MIT
+    - LICENSE
 
 extra:
   recipe-maintainers:
