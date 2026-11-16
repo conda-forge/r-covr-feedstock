@@ -1,4 +1,4 @@
-{% set version = "3.6.5" %}
+{% set version = "4.0.0" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/covr_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/covr/covr_{{ version }}.tar.gz
-  sha256: 20d3a98c1d751c68115e0dacd9ac46d83a112bbadf1f46da7c9672afee7e8986
+  sha256: 28fc3043496db08766b394c05f0fe8a8daa5f64457131019c1274eab17357ee7
 
 build:
   number: 0
@@ -69,8 +69,8 @@ test:
 about:
   home: https://github.com/r-lib/covr
   license: MIT
-  summary: Track and report code coverage for your package and (optionally) upload the results to a coverage service like 'Codecov' <http://codecov.io> or 'Coveralls' <http://coveralls.io>. Code coverage is a measure of the amount of code being exercised by a set of tests. It is an indirect measure of test quality and completeness.
-    This package is compatible with any testing methodology or framework and tracks coverage of both R code and compiled C/C++/FORTRAN code.
+  summary: Track and report code coverage for your package and (optionally) upload the results to a coverage service like 'Codecov' <http://codecov.io> or 'Coveralls' <http://coveralls.io>. Code coverage is a measure of the amount of code being exercised by a set of tests. It is an indirect measure of test quality and 
+    completeness. This package is compatible with any testing methodology or framework and tracks coverage of both R code and compiled C/C++/FORTRAN code.
   license_family: MIT
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/MIT
